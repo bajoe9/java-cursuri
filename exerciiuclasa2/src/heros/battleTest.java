@@ -6,6 +6,11 @@ public class battleTest {
         mage mercutio = new mage(30,0);
         battle(batman, mercutio);
 
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }//trebuie exciplit sa ruleze mai precis sa vedeti valrile
     public static void battle(Hero aHero, Hero aNotherHero){
