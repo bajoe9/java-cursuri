@@ -28,6 +28,10 @@ public class Songs {
             System.out.println(song);
         }
 
+        //if("Circles".compareToIgnoreCase("Pink")==-1){
+
+        //}
+
     }
 
     }
