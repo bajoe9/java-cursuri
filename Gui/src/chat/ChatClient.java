@@ -1,6 +1,7 @@
 package chat;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -34,6 +35,7 @@ public class ChatClient {
         panel.add(outputTextField);
         panel.add(send);
         frame.add(panel);
+        frame.getContentPane().add(BorderLayout.CENTER,panel);
 
 
 
