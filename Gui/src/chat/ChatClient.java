@@ -24,6 +24,8 @@ public class ChatClient {
         send.addActionListener(new sendListener());
         inputTextArea = new JTextArea(20,60);
         inputTextArea.setEditable(false);
+        inputTextArea.setLineWrap(true);
+        inputTextArea.setWrapStyleWord(true);
         JScrollPane scroll = new JScrollPane(inputTextArea);
         scroll .setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         scroll .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
