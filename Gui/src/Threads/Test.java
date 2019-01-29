@@ -5,7 +5,7 @@ public class Test {
         new Test().run();
     }
         public void run() {
-            Thread first = new Thread(new Job());
+                Thread first = new Thread(new Job());
                 Thread second = new Thread(new Job());
                 Thread third = new Thread(new Job());
                 first.run();

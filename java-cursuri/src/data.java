@@ -91,6 +91,8 @@ public class data {
              while (p < 3){
                  System.out.println("incarcare partiala");
                  p++;
+
+
              }
 
 

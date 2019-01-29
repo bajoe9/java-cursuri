@@ -6,10 +6,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class SimpleGui implements ActionListener {
-    JButton button;
-    JFrame window;
+public class SimpleGui {
+   private JButton circleButton;
+   private JButton labelButton;
+   private JFrame window;
+   private JLabel label;
     private  DrawPanel panel;
+
+class CircleButtonListener implements ActionListener{
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        changeColor();
+    }
+}
+    class LabelActionListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            changeLabel();
+        }
+    }
+
     public static void main(String[] args) {
         new SimpleGui().run();
 
@@ -18,33 +36,34 @@ public class SimpleGui implements ActionListener {
     private  void run() {
         window = new JFrame();
 
-        //button= new JButton("Click me");
-        button= new JButton("Change color");
+        //circleButton= new JButton("Click me");
+        circleButton = new JButton("Change color");
+        labelButton = new JButton("new");
 
-        button.addActionListener(this);
+        circleButton.addActionListener(new CircleButtonListener());
+        labelButton.addActionListener(new LabelActionListener());
         panel = new DrawPanel();
+        labelButton= new JButton("Change label");
+        label= new JLabel("not clicked");
 
-        window.getContentPane().add(BorderLayout.SOUTH,button);
+
+        window.getContentPane().add(BorderLayout.SOUTH, circleButton);
+        window.getContentPane().add(BorderLayout.EAST,labelButton);
         window.getContentPane().add(BorderLayout.CENTER,panel);
+        window.getContentPane().add(BorderLayout.WEST,label);
+
 
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setSize(300,300);
+        window.setSize(500,500);
         window.setVisible(true);
-        moveCircle();
+
     }
 
     public  void changeText(){
-        button.setText("Click");
+        circleButton.setText("Click");
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        changeText();
-        changeColor();
-        moveCircle();
-
-    }
 
     private void moveCircle()  {
         for(int x=0; x<=300; x++ ){
@@ -63,4 +82,8 @@ public class SimpleGui implements ActionListener {
     private void changeColor() {
         window.repaint();
     }
+    public void changeLabel() {
+       label.setText("Test");
+        }
+
 }

@@ -17,7 +17,10 @@ public class MasterMind {
 
          public void  run(){
         int number= randomNumber();
-             System.out.println(number);
+              //read tried using scanner
+             // convert tried number into digits list
+             //for each tried digit verify digits.contains
+             //for each index verify digits equals
    }
 
     private int randomNumber() {
